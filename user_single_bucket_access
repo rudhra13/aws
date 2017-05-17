@@ -1,0 +1,14 @@
+#iam user inline policy to access single bucket
+
+{
+  "Statement": [
+    {
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:s3:::4ormat-knowledge-base",
+        "arn:aws:s3:::4ormat-knowledge-base/*"
+      ]
+    }
+  ]
+}
