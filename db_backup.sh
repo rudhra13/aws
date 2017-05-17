@@ -28,7 +28,7 @@
         DB=$1
         STATUS=$2
         MESSAGE=$3
-    	MAILFR="infra@innovaccer.com"
+    	MAILFR=""
 	MAILTO=""
 	SMTPPASS="jlemjwlhioxjxomg"
 	echo -e "$MESSAGE" | /usr/bin/mailx -v -s "$PROJECT_NAME $DB of date-$TIMESTAMP $STATUS:" -S smtp-use-starttls -S ssl-verify=ignore -S smtp-auth=login -S smtp=smtp://smtp.gmail.com:587 -S from="$MAILFR(DB Backup Script)" -S smtp-auth-user="$MAILFR" -S smtp-auth-password="$SMTPPASS" -S ssl-verify=ignore -S nss-config-dir=/home/centos/.certs $MAILTO
