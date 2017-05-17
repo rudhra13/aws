@@ -1,0 +1,21 @@
+#policy to allow access from single ip address
+
+{
+    "Id": "S3PolicyId1",
+    "Statement": [
+        {
+            "Sid": "IPDeny",
+            "Effect": "Deny",
+            "Principal": {
+                "AWS": "*"
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::bucket-name/*",
+            "Condition": {
+                "NotIpAddress": {
+                    "aws:SourceIp": ["111.93.185.242/32","180.151.72.106/32"]
+                }
+            }
+        }
+    ]
+}
